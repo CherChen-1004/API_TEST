@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="544ee755-d9a2-46cc-9206-28fa90ad89dd" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py20180725$auth_change_mobile_verify_code_test.coverage" NAME="auth_change_mobile_verify_code_test Coverage Results" MODIFIED="1532517198692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py$auth_change_mobile_verify_code_test.coverage" NAME="auth_change_mobile_verify_code_test Coverage Results" MODIFIED="1511943435986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/pyrequest_master$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1510823707708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyrequest_master$mysql_db.coverage" NAME="mysql_db Coverage Results" MODIFIED="1510830300743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_fixture" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py20180725$auth_change_email_verify_code_test.coverage" NAME="auth_change_email_verify_code_test Coverage Results" MODIFIED="1532514855365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py20180725$run_tests.coverage" NAME="run_tests Coverage Results" MODIFIED="1532514869072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py$auth_smscode_test.coverage" NAME="auth_smscode_test Coverage Results" MODIFIED="1511946567908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py20180725$simulator_device_command_send_test.coverage" NAME="simulator_device_command_send_test Coverage Results" MODIFIED="1532512795312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/pyrequest_master$auth_smscode_test.coverage" NAME="auth_smscode_test Coverage Results" MODIFIED="1510890681431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/pyrequest_master$test_data.coverage" NAME="test_data Coverage Results" MODIFIED="1511775293213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_fixture" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py20180725$simulator_device_status_send_test.coverage" NAME="simulator_device_status_send_test Coverage Results" MODIFIED="1532512909923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/zlgcloud_test_py20180725$auth_reset_password_test.coverage" NAME="auth_reset_password_test Coverage Results" MODIFIED="1532517286341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/pyrequest_master$auth_login_test.coverage" NAME="auth_login_test Coverage Results" MODIFIED="1511831886164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db_fixture/test_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23250">
+              <caret line="776" selection-start-line="776" selection-end-line="781" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_change_email_verify_code_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/auth_change_email_verify_code_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" selection-start-line="15" selection-start-column="2" selection-end-line="18" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_change_mobile_verify_code_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/auth_change_mobile_verify_code_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1800">
+              <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_change_password_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/auth_change_password_test.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="auth_reset_password_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/auth_reset_password_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connection.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/program/python/Lib/site-packages/urllib3/connection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3900">
+              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connection.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/program/python/Lib/site-packages/urllib3/util/connection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2070">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simulator_device_status_send_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/simulator_device_status_send_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4860">
+              <caret line="169" column="49" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="device_for_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db_fixture/device_for_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3601">
+              <caret line="208" column="38" lean-forward="true" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mobile_exist</find>
+      <find>200</find>
+      <find>UsersForTest....session</find>
+      <find>www.zlgcloud.com</find>
+      <find>user2</find>
+      <find>user1</find>
+      <find>smscode</find>
+      <find>get_chang</find>
+      <find>//zlab.zlgcloud.com:443</find>
+      <find>self.users_arr</find>
+      <find>discoverable</find>
+      <find>False</find>
+      <find>username</find>
+      <find>self.ordinary_users</find>
+      <find>username:</find>
+      <find>sort</find>
+      <find>e_events_filter_null_owner_other_user</find>
+      <find>Add data failed!!</find>
+      <find>device_model_arr</find>
+      <find>devtype_commands_dict</find>
+      <find>devtype_commands_args_dict</find>
+      <find>re</find>
+      <find>devtype</find>
+      <find>expc</find>
+      <find>e</find>
+      <find>ex</find>
+      <find>expe</find>
+      <find>expect</find>
+      <find>delete firmware</find>
+      <find>cmdid</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>pass_through</replace>
+      <replace>self.users_arr[1]</replace>
+      <replace>self.base_url,self.agents_arr[0]</replace>
+      <replace>if r.status_code == 200</replace>
+      <replace>self.agent_0_orgnization_0['</replace>
+      <replace>firmware_admin</replace>
+      <replace>True</replace>
+      <replace>delete(url=base_url)</replace>
+      <replace>inverter</replace>
+      <replace>wrong</replace>
+      <replace>234</replace>
+      <replace>devtype_commands_args_dict_wrong</replace>
+      <replace>candtu</replace>
+      <replace>400</replace>
+      <replace>args_</replace>
+      <replace>temperature</replace>
+      <replace>collector</replace>
+      <replace>login_or_not=1)</replace>
+      <replace>user_login=self.firmware_admin</replace>
+      <replace>lady</replace>
+      <replace>gentleman</replace>
+      <replace>&quot;</replace>
+      <replace>UsersForTest(7,session</replace>
+      <replace>zlab.zlgcloud.com</replace>
+      <replace>user</replace>
+      <replace>user2</replace>
+      <replace>//zlab.zlgcloud.com</replace>
+      <replace>devid</replace>
+      <replace>models_list</replace>
+      <replace>device</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/interface/auth_recover_password_test.py" />
+        <option value="$PROJECT_DIR$/interface/auth_user_exist_test.py" />
+        <option value="$PROJECT_DIR$/interface/users_create_multithreading.py" />
+        <option value="$PROJECT_DIR$/interface/users_create_test.py" />
+        <option value="$PROJECT_DIR$/interface/users_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/users_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/users_m_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/users_message_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/users_photo_test_not_ready.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_create_test.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_add_users_test.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_delete_users_test.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_get_m_test.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/orgnizations_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_add_device_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_create_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_delete_device_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_get_m_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_picture_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_picture_upload_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_groups_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/devices_list_inquery_test.py" />
+        <option value="$PROJECT_DIR$/interface/devices_data_add_test.py" />
+        <option value="$PROJECT_DIR$/interface/devices_data_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/devices_data_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/devices_data_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_message_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_message_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_envents_status_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_events_add_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_events_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_events_inquery_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_events_update_test.py" />
+        <option value="$PROJECT_DIR$/interface/device_commands_inquery_test.py" />
+        <option value="$PROJECT_DIR$/interface/firmware_delete_test.py" />
+        <option value="$PROJECT_DIR$/interface/firmware_list_get_test.py" />
+        <option value="$PROJECT_DIR$/interface/firmware_updating_notice.py" />
+        <option value="$PROJECT_DIR$/interface/firmware_upload_test.py" />
+        <option value="$PROJECT_DIR$/db_fixture/device_schema.json" />
+        <option value="$PROJECT_DIR$/db_fixture/device_for_test.py" />
+        <option value="$PROJECT_DIR$/db_fixture/device_status.json" />
+        <option value="$PROJECT_DIR$/interface/simulator_device_status_send_test.py" />
+        <option value="$PROJECT_DIR$/interface/simulator_device_command_send_test.py" />
+        <option value="$PROJECT_DIR$/db_fixture/test_data.py" />
+        <option value="$PROJECT_DIR$/interface/auth_change_email_verify_code_test.py" />
+        <option value="$PROJECT_DIR$/interface/auth_change_mobile_verify_code_test.py" />
+        <option value="$PROJECT_DIR$/interface/auth_reset_password_test.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="310" />
+    <option name="y" value="70" />
+    <option name="width" value="1400" />
+    <option name="height" value="819" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="zlgcloud_test_py20180403" type="cbb8eebc:String" user="zlgcloud_test_py20180403" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="zlgcloud_test_py20180403" type="cbb8eebc:String" user="zlgcloud_test_py20180403" />
+              <item name="db_fixture" type="cbb8eebc:String" user="db_fixture" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="zlgcloud_test_py20180725" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zlgcloud_test_py20180725" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zlgcloud_test_py20180725" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zlgcloud_test_py20180725" type="462c0819:PsiDirectoryNode" />
+              <item name="db_fixture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zlgcloud_test_py20180725" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zlgcloud_test_py20180725" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/IOT/测试代码/zlgcloud_test_py/db_fixture/orgnization_test_data.txt" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\1.zlgcloud\测试代码\zlgcloud_test_py20180403\interface" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\cxx\zlgcloud_interface_test\pyrequest-master\interface_guest" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.auth_reset_password_test">
+    <configuration name="auth_change_email_verify_code_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyrequest-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/interface" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interface/auth_change_email_verify_code_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="auth_change_mobile_verify_code_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyrequest-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/interface" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interface/auth_change_mobile_verify_code_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="auth_reset_password_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyrequest-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/interface" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interface/auth_reset_password_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="run_tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyrequest-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="simulator_device_status_send_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyrequest-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/interface" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interface/simulator_device_status_send_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.simulator_device_status_send_test" />
+      <item itemvalue="Python.run_tests" />
+      <item itemvalue="Python.auth_change_email_verify_code_test" />
+      <item itemvalue="Python.auth_change_mobile_verify_code_test" />
+      <item itemvalue="Python.auth_reset_password_test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.auth_reset_password_test" />
+        <item itemvalue="Python.auth_change_mobile_verify_code_test" />
+        <item itemvalue="Python.run_tests" />
+        <item itemvalue="Python.auth_change_email_verify_code_test" />
+        <item itemvalue="Python.simulator_device_status_send_test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\94611\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="544ee755-d9a2-46cc-9206-28fa90ad89dd" name="Default" comment="" />
+      <created>1510822346807</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1510822346807</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_auth_change_email_verify_code_test_AuthChangeEmailVerifyCodeTest_test_email_verify_code_right - 2018.01.26 at 14h 53m 24s.xml">
+      <configuration name="Unittests for auth_change_email_verify_code_test.AuthChangeEmailVerifyCodeTest.test_email_verify_code_right" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_devices_data_add_test_DevicesDataAddTest_test_add_devices_data_logout - 2018.02.03 at 16h 12m 39s.xml">
+      <configuration name="Unittests for devices_data_add_test.DevicesDataAddTest.test_add_devices_data_logout" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_orgnizations_add_users_test_not_ready_py - 2018.03.07 at 17h 11m 42s.xml">
+      <configuration name="Unittests in orgnizations_add_users_test_not_ready.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_orgnizations_add_users_test_not_ready_py - 2018.03.07 at 17h 12m 34s.xml">
+      <configuration name="Unittests in orgnizations_add_users_test_not_ready.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_users_get_test_py - 2018.02.09 at 14h 52m 58s.xml">
+      <configuration name="Unittests in users_get_test.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5025" side_tool="true" weight="0.41492146" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4975" weight="0.23862068" />
+      <window_info anchor="bottom" id="Version Control" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14453125" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="1" weight="0.0065681445" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.24958949" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.37827227" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="2" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="0" weight="0.34154353" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32984293" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/interface_guest/user_sign_test.py</url>
+          <line>12</line>
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db_fixture/device_for_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6090">
+          <caret line="208" column="68" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_add_users_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3090">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_create_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4170">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_delete_users_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="33" column="79" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_get_m_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_get_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/orgnizations_update_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4287">
+          <caret line="40" selection-start-line="40" selection-end-line="156" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_add_device_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2143">
+          <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_create_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2206">
+          <caret line="104" column="124" selection-start-line="104" selection-start-column="124" selection-end-line="104" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_delete_device_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_get_m_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_get_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_picture_delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="57" column="81" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_picture_upload_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="46" column="81" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_groups_update_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="136" column="11" lean-forward="true" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/devices_list_inquery_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/devices_data_add_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="45" selection-start-line="45" selection-end-line="340" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/devices_data_delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4646">
+          <caret line="193" column="41" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="193" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/devices_data_get_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1776">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/devices_data_update_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_message_get_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_message_update_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_event_test_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="48" lean-forward="true" selection-start-column="48" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_envents_status_update_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="108" column="18" lean-forward="true" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_events_add_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="159" column="26" lean-forward="true" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_events_delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_events_inquery_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/urllib3-1.22-py3.5.egg/urllib3/connection.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/urllib3-1.22-py3.5.egg/urllib3/util/connection.py" />
+    <entry file="file://$PROJECT_DIR$/interface/device_events_update_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3540">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/device_commands_inquery_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/firmware_delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3240">
+          <caret line="112" column="49" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/firmware_updating_notice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="48" selection-start-line="48" selection-end-line="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_fixture/device_schema.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73170">
+          <caret line="2439" column="1" selection-start-line="2439" selection-start-column="1" selection-end-line="2439" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/firmware_upload_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="94" column="62" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/firmware_list_get_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_fixture/device_status.json" />
+    <entry file="file://$PROJECT_DIR$/db_fixture/mqtt_topic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/simulator_device_command_send_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-601">
+          <caret line="251" selection-start-line="251" selection-end-line="258" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/simulator_device_status_send_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4860">
+          <caret line="169" column="49" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/python/Lib/site-packages/urllib3/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/python/Lib/site-packages/urllib3/util/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_fixture/test_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23250">
+          <caret line="776" selection-start-line="776" selection-end-line="781" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/auth_change_email_verify_code_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" selection-start-line="15" selection-start-column="2" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/auth_change_mobile_verify_code_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/auth_change_password_test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/auth_reset_password_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_fixture/device_for_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3601">
+          <caret line="208" column="38" lean-forward="true" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,2440 @@
+[
+  {
+    "type": "demo",
+    "comment": "温度传感器(demo)",
+    "model": "demo01",
+    "models": [
+      "demo01",
+      "demo02",
+      "demo03",
+      "demo04"
+    ],
+    "manufacturer": "zlg",
+    "memo": {
+      "devname": {
+        "comment": "设备名称",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "desc": {
+        "comment": "设备备注",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "country": {
+        "comment": "设备所在国家",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "region": {
+        "comment": "设备所在省份",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "city": {
+        "comment": "设备所在市县",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "status": {
+        "type": "number",
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "comment": "设备状态标志：online(0)，offline(1)，fault(2)，standby(3)，warning(4)，error(5)，protocol_error(6)"
+      },
+      "favorite": {
+        "type": "number",
+        "enums": [
+          0,
+          1
+        ],
+        "comment": "收藏：没有收藏(0)，收藏(1)"
+      }
+    },
+    "status": {
+      "sw_version": {
+        "comment": "software version",
+        "format": "float",
+        "type": "number"
+      },
+      "settings": {
+        "comment": "settings",
+        "format": "json",
+        "type": "json",
+        "schema": {
+          "title": "Person",
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "age": {
+              "description": "Age in years",
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "firstName",
+            "lastName"
+          ]
+        }
+      },
+      "clientip": {
+        "comment": "client ip",
+        "type": "string",
+        "maxLength": 32
+      },
+      "currentfm": {
+        "comment": "设备当前固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "curfminfo",
+          "type": "object",
+          "properties": {
+            "version": {
+              "comment": "当前固件版本",
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      },
+      "newfm": {
+        "comment": "待升级固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "newfminfo",
+          "type": "object",
+          "properties": {
+            "isnew": {
+              "comment": "是否存在待升级固件:不存在待升级固件(0),存在待升级固件(1)",
+              "type": "nubmer",
+              "enums": [
+                0,
+                1
+              ]
+            },
+            "model": {
+              "comment": "新固件型号",
+              "type": "string"
+            },
+            "version": {
+              "comment": "新固件版本",
+              "type": "string"
+            },
+            "url": {
+              "comment": "新固件地址",
+              "type": "string"
+            }
+          },
+          "required": [
+            "isnew"
+          ]
+        }
+      }
+    },
+    "data": {
+      "temp": {
+        "comment": "温度",
+        "format": "float",
+        "type": "number"
+      }
+    },
+    "warnings": {
+      "temperature_high": {
+        "comment": "工作温度偏高",
+        "args": {
+          "value": {
+            "format": "float",
+            "type": "number"
+          }
+        }
+      }
+    },
+    "errors": {
+      "temperature_too_high": {
+        "comment": "工作温度过高",
+        "args": {
+          "value": {
+            "format": "float",
+            "type": "number"
+          }
+        }
+      }
+    },
+    "commands": {
+      "set_report_interval": {
+        "comment": "设置上报温度时间间隔",
+        "args": {
+          "value": {
+            "type": "number",
+            "format": "int",
+            "comment": "单位为秒。"
+          }
+        }
+      },
+      "sync_time": {
+        "comment": "同步时间",
+        "args": {
+          "time": {
+            "required": true,
+            "type": "number"
+          }
+        }
+      },
+      "notify_upgrade": {
+        "comment": "通知设备有新固件，设备收到通知后，可提示用户有更新但不执行更新，也可后台自动更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "exec_upgrade": {
+        "comment": "通知设备更新固件，设备收到通知后，需立即更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "req_report": {
+        "comment": "要求设备上报最新数据。",
+        "args": {}
+      },
+      "pass_through": {
+        "comment": "透传命令",
+        "args": {
+          "raw": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "candtu",
+    "comment": "CAN-bus数据记录仪",
+    "model": "CANDTU-200UWG",
+    "models": [
+      "CANDTU-200UWG",
+      "CANDTU-200UWGR",
+      "CANDTU-200UWGR-B"
+    ],
+    "manufacturer": "ZLG",
+    "memo": {
+      "desc": {
+        "comment": "设备备注",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "devname": {
+        "comment": "设备名称",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "country": {
+        "comment": "设备所在国家",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "region": {
+        "comment": "设备所在省份",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "city": {
+        "comment": "设备所在市县",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "status": {
+        "type": "number",
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "comment": "设备状态标志：online(0)，offline(1)，fault(2)，standby(3)，warning(4)，error(5)，protocol_error(6)"
+      },
+      "favorite": {
+        "type": "number",
+        "enums": [
+          0,
+          1
+        ],
+        "comment": "收藏：没有收藏(0)，收藏(1)"
+      }
+    },
+    "status": {
+      "devname": {
+        "comment": "设备名",
+        "type": "string"
+      },
+      "CfgInfo": {
+        "comment": "CANDTU配置",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "type": "object",
+          "definitions": {},
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "properties": {
+            "CfgInfo": {
+              "type": "object",
+              "description": "CANDTU配置信息",
+              "properties": {
+                "CAN": {
+                  "type": "object",
+                  "description": "CAN配置",
+                  "properties": {
+                    "CAN0": {
+                      "type": "object",
+                      "description": "CAN0配置",
+                      "properties": {
+                        "Chn": {
+                          "type": "integer",
+                          "description": "CAN通道",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Enable": {
+                          "type": "integer",
+                          "description": "通道通道使能(1)/失能(0)",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "ResEn": {
+                          "type": "integer",
+                          "description": "终端电阻使能(1)/失能(0)",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Mode": {
+                          "type": "integer",
+                          "description": "CAN工作模式：正常模式(0)/只听模式(1)",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "BpsBrp": {
+                          "type": "integer",
+                          "description": "CAN波特率BRP",
+                          "minimum": 1,
+                          "maximum": 255
+                        },
+                        "BpsSjw": {
+                          "type": "integer",
+                          "description": "CAN波特率Sjw",
+                          "minimum": 0,
+                          "maximum": 3
+                        },
+                        "BpsSeg1": {
+                          "type": "integer",
+                          "description": "CAN波特率Seg1",
+                          "minimum": 3,
+                          "maximum": 14
+                        },
+                        "BpsSeg2": {
+                          "type": "integer",
+                          "description": "CAN波特率Seg2",
+                          "minimum": 1,
+                          "maximum": 7
+                        },
+                        "BpsSmp": {
+                          "type": "integer",
+                          "description": "CAN波特率Smp",
+                          "enum": [
+                            0
+                          ]
+                        },
+                        "FltFmat": {
+                          "type": "integer",
+                          "description": "CAN滤波格式",
+                          "enum": [
+                            0
+                          ]
+                        },
+                        "Flt": {
+                          "type": "array",
+                          "description": "CAN滤波表",
+                          "minItems": 8,
+                          "maxItems": 8,
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "Mask": {
+                                  "type": "integer",
+                                  "description": "CAN滤波屏蔽码"
+                                },
+                                "Acc": {
+                                  "type": "integer",
+                                  "description": "CAN滤波过滤码"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "LIN": {
+                  "type": "object",
+                  "description": "LIN配置",
+                  "properties": {
+                    "LIN0": {
+                      "type": "object",
+                      "description": "LIN配置",
+                      "properties": {
+                        "Chn": {
+                          "type": "integer",
+                          "description": "通道",
+                          "enum": [
+                            0
+                          ]
+                        },
+                        "Enable": {
+                          "type": "integer",
+                          "description": "通道使能(1)/失能(0)",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Baud": {
+                          "type": "integer",
+                          "description": "LIN波特率",
+                          "minimum": 1000,
+                          "maximum": 20000
+                        },
+                        "DataLen": {
+                          "type": "integer",
+                          "description": "LIN数据长度",
+                          "minimum": 1,
+                          "maximum": 8
+                        }
+                      }
+                    }
+                  }
+                },
+                "DI": {
+                  "type": "object",
+                  "description": "DI配置",
+                  "properties": {
+                    "DI0": {
+                      "type": "object",
+                      "description": "DI配置",
+                      "properties": {
+                        "Chn": {
+                          "type": "integer",
+                          "description": "通道",
+                          "enum": [
+                            0
+                          ]
+                        },
+                        "Enable": {
+                          "type": "integer",
+                          "description": "通道使能(1)/失能(0)",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Func": {
+                          "type": "integer",
+                          "description": "DI功能",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Interval": {
+                          "type": "integer",
+                          "description": "DI记录间隔(ms)，DI功能为输入时有效",
+                          "enum": [
+                            1,
+                            2,
+                            5,
+                            10,
+                            20,
+                            50,
+                            100,
+                            200,
+                            500,
+                            1000
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "DO": {
+                  "type": "object",
+                  "description": "DO配置",
+                  "properties": {
+                    "DO0": {
+                      "type": "object",
+                      "description": "DO配置",
+                      "properties": {
+                        "Chn": {
+                          "type": "integer",
+                          "description": "通道号",
+                          "enum": [
+                            0
+                          ]
+                        },
+                        "Enable": {
+                          "type": "integer",
+                          "description": "通道使能(1)/失能(0)",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Func": {
+                          "type": "integer",
+                          "description": "告警条件，1：记录满，2：总线错误，3：存储状态异常，4：GPS区域告警",
+                          "enum": [
+                            1,
+                            2,
+                            4,
+                            8
+                          ]
+                        },
+                        "Output": {
+                          "type": "integer",
+                          "description": "DO告警时输出值",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "InOut": {
+                          "type": "integer",
+                          "description": "DO告警GPS范围设置，0内部，1外部",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Lat": {
+                          "type": "integer",
+                          "description": "DO告警GPS纬度"
+                        },
+                        "Long": {
+                          "type": "integer",
+                          "description": "DO告警GPS经度"
+                        },
+                        "Radius": {
+                          "type": "integer",
+                          "description": "DO告警GPS中心点半径",
+                          "minimum": 50,
+                          "maximum": 10000
+                        }
+                      }
+                    }
+                  }
+                },
+                "RecCfg": {
+                  "type": "object",
+                  "description": "CANDTU记录配置",
+                  "properties": {
+                    "RecFullHdl": {
+                      "type": "integer",
+                      "description": "存储空间满处理(0:循环记录/1：停止记录)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "RecFSize": {
+                      "type": "integer",
+                      "description": "最大记录文件大小(MB)",
+                      "minimum": 1,
+                      "maximum": 4096
+                    },
+                    "RecErr": {
+                      "type": "integer",
+                      "description": "是否记录CAN错误帧(0:不记录/1：记录)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "RecMer": {
+                      "type": "integer",
+                      "description": "通道记录数据是否合并(0：不合并/1:合并)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    }
+                  }
+                },
+                "TrgMode": {
+                  "type": "object",
+                  "description": "CANDTU记录触发模式配置",
+                  "properties": {
+                    "RecMode": {
+                      "type": "integer",
+                      "description": "CAN记录模式(0：长时间记录/1:条件记录/2：预触发记录/3：定时记录/4：不记录)",
+                      "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                      ]
+                    },
+                    "ConRec": {
+                      "type": "object",
+                      "description": "条件记录配置对象",
+                      "properties": {
+                        "StartChn": {
+                          "type": "integer",
+                          "description": "开始记录通道号",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "StartExt": {
+                          "type": "integer",
+                          "description": "开始记录帧类型（0：标准帧/1:扩展帧）",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "StartOp": {
+                          "type": "integer",
+                          "description": "开始记录条件(0:等于/1:不等于/2:小于/3：小于等于/4：大于/5：大于等于/6：在范围内/7：在范围外)",
+                          "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7
+                          ]
+                        },
+                        "StartIdS": {
+                          "type": "integer",
+                          "description": "开始记录起始帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                          "minimum": 0,
+                          "maximum": 1073741823
+                        },
+                        "StartIdL": {
+                          "type": "integer",
+                          "description": "开始记录结束帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                          "minimum": 0,
+                          "maximum": 1073741823
+                        },
+                        "StopChn": {
+                          "type": "integer",
+                          "description": "停止记录通道号,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                          "minimum": 0,
+                          "maximum": 1073741823
+                        },
+                        "StopExt": {
+                          "type": "integer",
+                          "description": "停止记录帧类型（0：标准帧/1:扩展帧),标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                          "minimum": 0,
+                          "maximum": 1073741823
+                        },
+                        "StopOp": {
+                          "type": "integer",
+                          "description": "停止记录条件(0:等于/1:不等于/2:小于/3：小于等于/4：大于/5：大于等于/6：在范围内/7：在范围外)",
+                          "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7
+                          ]
+                        },
+                        "StopIdS": {
+                          "type": "integer",
+                          "description": "停止记录起始帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                          "minimum": 0,
+                          "maximum": 1073741823
+                        },
+                        "StopIdL": {
+                          "type": "integer",
+                          "description": "停止记录结束帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                          "minimum": 0,
+                          "maximum": 1073741823
+                        }
+                      }
+                    },
+                    "PreTrgRec": {
+                      "type": "object",
+                      "description": "预触发记录配置对象",
+                      "properties": {
+                        "PreVal": {
+                          "type": "integer",
+                          "description": "预触发记录帧数",
+                          "minimum": 10,
+                          "maximum": 10000
+                        },
+                        "PostVal": {
+                          "type": "integer",
+                          "description": "触发后记录时间(ms)",
+                          "minimum": 10,
+                          "maximum": 10000
+                        },
+                        "TrgNum": {
+                          "type": "integer",
+                          "description": "触发条件数",
+                          "minimum": 1,
+                          "maximum": 512
+                        },
+                        "TrgCon": {
+                          "type": "array",
+                          "description": "触发条件列表",
+                          "minItems": 1,
+                          "maxItems": 512,
+                          "items": [
+                            {
+                              "type": "object",
+                              "description": "触发条件对象",
+                              "properties": {
+                                "Chn": {
+                                  "type": "integer",
+                                  "description": "通道号",
+                                  "enum": [
+                                    0,
+                                    1
+                                  ]
+                                },
+                                "Type": {
+                                  "type": "integer",
+                                  "description": "触发记录类型（0：ID触发/1:错误帧触发/2：按键触发/3:DI触发）",
+                                  "enum": [
+                                    0,
+                                    1,
+                                    2,
+                                    3
+                                  ]
+                                },
+                                "Op": {
+                                  "type": "integer",
+                                  "description": "触发条件(0:等于/1:不等于/2:小于/3：小于等于/4：大于/5：大于等于/6：在范围内/7：在范围外)",
+                                  "enum": [
+                                    0,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7
+                                  ]
+                                },
+                                "Ext": {
+                                  "type": "integer",
+                                  "description": "是否为扩展帧（0：标准帧/1：扩展帧）",
+                                  "enum": [
+                                    0,
+                                    1
+                                  ]
+                                },
+                                "IdS": {
+                                  "type": "integer",
+                                  "description": "触发条件起始帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                                  "minimum": 0,
+                                  "maximum": 1073741823
+                                },
+                                "IdL": {
+                                  "type": "integer",
+                                  "description": "触发条件结束帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                                  "minimum": 0,
+                                  "maximum": 1073741823
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "TimRec": {
+                      "type": "object",
+                      "description": "定时记录配置对象",
+                      "properties": {
+                        "Period": {
+                          "type": "object",
+                          "description": "定时时间周期（ms）",
+                          "minimum": 10,
+                          "maximum": 100000
+                        },
+                        "TmNDA": {
+                          "type": "object",
+                          "description": "定时时间内无数据记录方式（0：不记录/1：保存最近一次数据/2：保存自定义数据）",
+                          "enum": [
+                            0,
+                            1,
+                            2
+                          ]
+                        },
+                        "TmNDAUD": {
+                          "type": "string",
+                          "description": "定时时间内无记录保存的自定义数据（16进制保存为字符串）"
+                        },
+                        "FltNum": {
+                          "type": "integer",
+                          "description": "过滤条件数",
+                          "minimum": 0,
+                          "maximum": 256
+                        },
+                        "FltCon": {
+                          "type": "array",
+                          "description": "过滤条件列表",
+                          "minItems": 1,
+                          "maxItems": 512,
+                          "items": [
+                            {
+                              "type": "object",
+                              "description": "触发条件对象",
+                              "properties": {
+                                "Chn": {
+                                  "type": "integer",
+                                  "description": "通道号",
+                                  "enum": [
+                                    0,
+                                    1
+                                  ]
+                                },
+                                "Type": {
+                                  "type": "integer",
+                                  "description": "触发记录类型（0：ID触发/1:错误帧触发/2：按键触发/3:DI触发）",
+                                  "enum": [
+                                    0,
+                                    1,
+                                    2,
+                                    3
+                                  ]
+                                },
+                                "Op": {
+                                  "type": "integer",
+                                  "description": "触发条件(0:等于/1:不等于/2:小于/3：小于等于/4：大于/5：大于等于/6：在范围内/7：在范围外)",
+                                  "enum": [
+                                    0,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7
+                                  ]
+                                },
+                                "Ext": {
+                                  "type": "integer",
+                                  "description": "是否为扩展帧（0：标准帧/1：扩展帧）",
+                                  "enum": [
+                                    0,
+                                    1
+                                  ]
+                                },
+                                "IdS": {
+                                  "type": "integer",
+                                  "description": "触发条件起始帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                                  "minimum": 0,
+                                  "maximum": 1073741823
+                                },
+                                "IdL": {
+                                  "type": "integer",
+                                  "description": "触发条件结束帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                                  "minimum": 0,
+                                  "maximum": 1073741823
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "Quota": {
+                  "type": "object",
+                  "description": "存储空间分配",
+                  "properties": {
+                    "CAN0": {
+                      "type": "integer",
+                      "description": "CAN0占用空间百分比",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "CAN1": {
+                      "type": "integer",
+                      "description": "CAN0占用空间百分比",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "LIN0": {
+                      "type": "integer",
+                      "description": "LIN占用空间百分比",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "DI0": {
+                      "type": "integer",
+                      "description": "DI0占用空间百分比",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "DI1": {
+                      "type": "integer",
+                      "description": "DI1占用空间百分比",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "GPS": {
+                      "type": "integer",
+                      "description": "GPS占用空间百分比",
+                      "minimum": 0,
+                      "maximum": 100
+                    }
+                  }
+                },
+                "GPSRec": {
+                  "type": "object",
+                  "description": "GPS记录配置",
+                  "properties": {
+                    "Enable": {
+                      "type": "integer",
+                      "description": "GPS记录使能（1：使能/0：失能）",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "Type": {
+                      "type": "integer",
+                      "description": "定位系统类型（0：自动选择/1：北斗/2：GPS）",
+                      "enum": [
+                        0,
+                        1,
+                        2
+                      ]
+                    },
+                    "Period": {
+                      "type": "integer",
+                      "description": "记录周期（s）",
+                      "minimum": 1,
+                      "maximum": 1800
+                    }
+                  }
+                },
+                "SMS": {
+                  "type": "object",
+                  "description": "短信配置",
+                  "properties": {
+                    "SMS0": {
+                      "type": "object",
+                      "description": "短信告警配置",
+                      "properties": {
+                        "Chn": {
+                          "type": "integer",
+                          "description": "通道号",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Func": {
+                          "type": "integer",
+                          "description": "报警功能类型：1-记录满，2-CAN总线错误，4-SD卡异常，8-GPS区域告警",
+                          "enum": [
+                            1,
+                            2,
+                            4,
+                            8
+                          ]
+                        },
+                        "Enable": {
+                          "type": "integer",
+                          "description": "使能（1：使能/0：失能）",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Num": {
+                          "type": "string",
+                          "description": "报警手机号码,12字节字符串"
+                        },
+                        "InOut": {
+                          "type": "integer",
+                          "description": "GPS范围设置，0内部，1外部",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Lat": {
+                          "type": "integer",
+                          "description": "GPS纬度"
+                        },
+                        "Long": {
+                          "type": "integer",
+                          "description": "GPS经度"
+                        },
+                        "Radius": {
+                          "type": "integer",
+                          "description": "GPS中心点半径",
+                          "minimum": 50,
+                          "maximum": 10000
+                        }
+                      }
+                    }
+                  }
+                },
+                "Net": {
+                  "type": "object",
+                  "description": "短信配置",
+                  "properties": {
+                    "Net0": {
+                      "type": "object",
+                      "description": "网络连接配置",
+                      "properties": {
+                        "Chn": {
+                          "type": "integer",
+                          "description": "通道号",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "Enable": {
+                          "type": "integer",
+                          "description": "使能（1：使能/0：失能）",
+                          "enum": [
+                            0,
+                            1
+                          ]
+                        },
+                        "LPort": {
+                          "type": "integer",
+                          "description": "本机端口",
+                          "minimum": 0,
+                          "maximum": 65535
+                        },
+                        "RAddr": {
+                          "type": "string",
+                          "description": "远程IP地址,最长64字节字符串"
+                        },
+                        "RPort": {
+                          "type": "integer",
+                          "description": "远程端口",
+                          "minimum": 0,
+                          "maximum": 65535
+                        }
+                      }
+                    }
+                  }
+                },
+                "NetFlt": {
+                  "type": "object",
+                  "description": "无线过滤配置",
+                  "properties": {
+                    "Enable": {
+                      "type": "integer",
+                      "description": "无线传输加密使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "FltNum": {
+                      "type": "integer",
+                      "description": "触发条件数",
+                      "minimum": 1,
+                      "maximum": 256
+                    },
+                    "FltCon": {
+                      "type": "array",
+                      "description": "触发条件列表",
+                      "minItems": 1,
+                      "maxItems": 256,
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "Chn": {
+                              "type": "integer",
+                              "description": "通道号",
+                              "enum": [
+                                0,
+                                1
+                              ]
+                            },
+                            "Type": {
+                              "type": "integer",
+                              "description": "过滤记录类型（0：ID滤波/1：时间段滤波）",
+                              "enum": [
+                                0,
+                                1
+                              ]
+                            },
+                            "Op": {
+                              "type": "integer",
+                              "description": "触发条件(0:等于/1:不等于/2:小于/3：小于等于/4：大于/5：大于等于/6：在范围内/7：在范围外)",
+                              "enum": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7
+                              ]
+                            },
+                            "Ext": {
+                              "type": "integer",
+                              "description": "是否为扩展帧（0：标准帧/1：扩展帧）",
+                              "enum": [
+                                0,
+                                1
+                              ]
+                            },
+                            "IdS": {
+                              "type": "integer",
+                              "description": "触发条件起始帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                              "minimum": 0,
+                              "maximum": 1073741823
+                            },
+                            "IdL": {
+                              "type": "integer",
+                              "description": "触发条件结束帧ID,标准帧最大为0x7FF,扩展帧最大为0x3FFFFFFF",
+                              "minimum": 0,
+                              "maximum": 1073741823
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "NetGen": {
+                  "type": "object",
+                  "description": "无线通用配置",
+                  "properties": {
+                    "Times": {
+                      "type": "integer",
+                      "description": "断网续传次数",
+                      "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                      ]
+                    },
+                    "Proto": {
+                      "type": "integer",
+                      "description": "加密协议编号",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "SendIdEn": {
+                      "type": "integer",
+                      "description": "网络数据携带设备ID和绝对时间戳使能",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "NetLogEn": {
+                      "type": "integer",
+                      "description": "网络调试日志使能",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    }
+                  }
+                },
+                "IotEn": {
+                  "type": "object",
+                  "description": "实时数据上传使能",
+                  "properties": {
+                    "CAN0": {
+                      "type": "integer",
+                      "description": "CAN0数据上传使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "CAN1": {
+                      "type": "integer",
+                      "description": "CAN1数据上传使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "GPS": {
+                      "type": "integer",
+                      "description": "GPS数据上传使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "LIN0": {
+                      "type": "integer",
+                      "description": "LIN数据上传使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "DI0": {
+                      "type": "integer",
+                      "description": "DI0数据上传使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "DI1": {
+                      "type": "integer",
+                      "description": "DI1数据上传使能(1:使能/0：失能)",
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "SDStat": {
+        "comment": "SD卡状态",
+        "type": "nubmer",
+        "format": "int"
+      },
+      "DevStat": {
+        "comment": "设备状态",
+        "type": "nubmer",
+        "format": "int"
+      },
+      "FwVer": {
+        "comment": "固件版本号",
+        "type": "string"
+      },
+      "HwVer": {
+        "comment": "硬件版本号",
+        "type": "string"
+      },
+      "Serial": {
+        "comment": "产品序列号",
+        "type": "string"
+      },
+      "clientip": {
+        "comment": "client ip",
+        "type": "string",
+        "maxLength": 32
+      },
+      "currentfm": {
+        "comment": "设备当前固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "curfminfo",
+          "type": "object",
+          "properties": {
+            "version": {
+              "comment": "当前固件版本",
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      },
+      "newfm": {
+        "comment": "待升级固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "newfminfo",
+          "type": "object",
+          "properties": {
+            "isnew": {
+              "comment": "是否存在待升级固件:不存在待升级固件(0),存在待升级固件(1)",
+              "type": "nubmer",
+              "enums": [
+                0,
+                1
+              ]
+            },
+            "model": {
+              "comment": "新固件型号",
+              "type": "string"
+            },
+            "version": {
+              "comment": "新固件版本",
+              "type": "string"
+            },
+            "url": {
+              "comment": "新固件地址",
+              "type": "string"
+            }
+          },
+          "required": [
+            "isnew"
+          ]
+        }
+      }
+    },
+    "commands": {
+      "DevNameUpdate": {
+        "comment": "设备名更新",
+        "args": {
+          "devname": {
+            "comment": "更新后设备名",
+            "type": "string"
+          }
+        }
+      },
+      "CfgReq": {
+        "comment": "CANDTU配置请求"
+      },
+      "Cfg": {
+        "comment": "CANDTU配置",
+        "args": {
+          "CfgInfo": {
+            "comment": "配置json对象",
+            "type": "string"
+          }
+        }
+      },
+      "CfgUpdate": {
+        "comment": "CANDTU配置更新"
+      },
+      "StartRec": {
+        "comment": "启动记录"
+      },
+      "StopRec": {
+        "comment": "停止记录"
+      },
+      "ClrDev": {
+        "comment": "清空设备"
+      },
+      "GetRecInfo": {
+        "comment": "获取指定记录数据信息",
+        "args": {
+          "RecType": {
+            "comment": "指定数据类型",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      },
+      "GetRecTypeInfo": {
+        "comment": "获取指定记录数据指定时间范围内信息",
+        "args": {
+          "RecType": {
+            "comment": "指定数据类型",
+            "type": "number",
+            "format": "int"
+          },
+          "StartTime": {
+            "comment": "起始时间戳",
+            "type": "number",
+            "format": "int"
+          },
+          "StopTime": {
+            "comment": "结束时间戳",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      },
+      "GetRecData": {
+        "comment": "获取记录数据",
+        "args": {
+          "RecType": {
+            "comment": "指定数据类型",
+            "type": "number",
+            "format": "int"
+          },
+          "StartTime": {
+            "comment": "起始时间戳",
+            "type": "number",
+            "format": "int"
+          },
+          "StopTime": {
+            "comment": "结束时间戳",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      },
+      "CancelGetRec": {
+        "comment": "取消获取记录数据",
+        "args": {
+          "RecType": {
+            "comment": "指定数据类型",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      },
+      "sync_time": {
+        "comment": "同步时间",
+        "args": {
+          "time": {
+            "required": true,
+            "type": "number"
+          }
+        }
+      },
+      "notify_upgrade": {
+        "comment": "通知设备有新固件，设备收到通知后，可提示用户有更新但不执行更新，也可后台自动更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "exec_upgrade": {
+        "comment": "通知设备更新固件，设备收到通知后，需立即更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "req_report": {
+        "comment": "要求设备上报最新数据。",
+        "args": {}
+      },
+      "pass_through": {
+        "comment": "透传命令",
+        "args": {
+          "raw": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "warnings": {
+      "RecFull": {
+        "comment": "记录满",
+        "args": {
+          "time": {
+            "comment": "错误发生时间戳",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      }
+    },
+    "errors": {
+      "can_err": {
+        "comment": "CAN总线错误",
+        "args": {
+          "chn": {
+            "comment": "CAN错误通道",
+            "type": "number",
+            "format": "int"
+          },
+          "time": {
+            "comment": "错误发生时间戳",
+            "type": "number",
+            "format": "int"
+          },
+          "err_code": {
+            "comment": "错误码",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      },
+      "storge_err": {
+        "comment": "存储状态异常",
+        "args": {
+          "time": {
+            "comment": "错误发生时间戳",
+            "type": "number",
+            "format": "int"
+          }
+        }
+      },
+      "gps_err": {
+        "comment": "GPS不在指定GPS区域",
+        "args": {
+          "time": {
+            "comment": "错误发生时间戳",
+            "type": "number",
+            "format": "int"
+          },
+          "type": {
+            "comment": "告警类型：1：短信通知设置的告警，2：DO输出设置的告警",
+            "type": "number",
+            "format": "int"
+          },
+          "longitude": {
+            "comment": "经度",
+            "type": "number",
+            "format": "float"
+          },
+          "latitude": {
+            "comment": "纬度",
+            "type": "number",
+            "format": "float"
+          }
+        }
+      }
+    },
+    "logs": {
+      "loginfo": {
+        "comment": "日志信息",
+        "args": {
+          "time": {
+            "comment": "日志时间",
+            "type": "nubmer",
+            "format": "int"
+          },
+          "info": {
+            "comment": "日志信息",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "inverter",
+    "comment": "逆变器",
+    "model": "INV001-ZLG",
+    "manufacturer": "ZLG",
+    "memo": {
+      "desc": {
+        "comment": "设备备注",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "devname": {
+        "comment": "设备名称",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "country": {
+        "comment": "设备所在国家",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "region": {
+        "comment": "设备所在省份",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "city": {
+        "comment": "设备所在市县",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "status": {
+        "type": "number",
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "comment": "设备状态标志：online(0)，offline(1)，fault(2)，standby(3)，warning(4)，error(5)，protocol_error(6)"
+      },
+      "favorite": {
+        "type": "number",
+        "enums": [
+          0,
+          1
+        ],
+        "comment": "收藏：没有收藏(0)，收藏(1)"
+      }
+    },
+    "status": {
+      "sw_ver1": {
+        "comment": "software version1",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "sw_ver2": {
+        "comment": "software version2",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "safety_spec": {
+        "comment": "安规",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "total_runtime": {
+        "comment": "总运行时间",
+        "unit": "H",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "today_runtime": {
+        "comment": "当天运行时间",
+        "unit": "H",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "clientip": {
+        "comment": "client ip",
+        "type": "string",
+        "maxLength": 32
+      },
+      "currentfm": {
+        "comment": "设备当前固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "curfminfo",
+          "type": "object",
+          "properties": {
+            "version": {
+              "comment": "当前固件版本",
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      },
+      "newfm": {
+        "comment": "待升级固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "newfminfo",
+          "type": "object",
+          "properties": {
+            "isnew": {
+              "comment": "是否存在待升级固件:不存在待升级固件(0),存在待升级固件(1)",
+              "type": "nubmer",
+              "enums": [
+                0,
+                1
+              ]
+            },
+            "model": {
+              "comment": "新固件型号",
+              "type": "string"
+            },
+            "version": {
+              "comment": "新固件版本",
+              "type": "string"
+            },
+            "url": {
+              "comment": "新固件地址",
+              "type": "string"
+            }
+          },
+          "required": [
+            "isnew"
+          ]
+        }
+      }
+    },
+    "data": {
+      "total_energy": {
+        "comment": "总发电量",
+        "unit": "kWh",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "today_energy": {
+        "comment": "当天发电量",
+        "unit": "kWh",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "temperature": {
+        "comment": "逆变器温度",
+        "format": "float",
+        "type": "number",
+        "unit": "℃",
+        "min": 0,
+        "max": 150
+      },
+      "gfci": {
+        "comment": "对地漏电流",
+        "format": "float",
+        "type": "number",
+        "unit": "mA",
+        "min": 0,
+        "max": 150
+      },
+      "bus_volt": {
+        "comment": "BUS电压",
+        "format": "float",
+        "type": "number",
+        "unit": "V",
+        "min": 0,
+        "max": 150
+      },
+      "power": {
+        "comment": "逆变器输出有功功率",
+        "format": "float",
+        "type": "number",
+        "unit": "W",
+        "min": 0,
+        "max": 6000
+      },
+      "q_power": {
+        "comment": "逆变器输出无功功率",
+        "format": "float",
+        "type": "number",
+        "unit": "W",
+        "min": 0,
+        "max": 1000
+      },
+      "pf": {
+        "comment": "逆变器输出功率因数",
+        "format": "float",
+        "type": "number",
+        "unit": "",
+        "min": 0,
+        "max": 1
+      },
+      "pv1_volt": {
+        "comment": "直流输入电压pv1",
+        "format": "float",
+        "type": "number",
+        "unit": "V",
+        "min": 0,
+        "max": 300
+      },
+      "pv1_curr": {
+        "comment": "直流输入电流pv1",
+        "format": "float",
+        "type": "number",
+        "unit": "A",
+        "min": 0,
+        "max": 20
+      },
+      "pv2_volt": {
+        "comment": "直流输入电压pv2",
+        "format": "float",
+        "type": "number",
+        "unit": "V",
+        "min": 0,
+        "max": 300
+      },
+      "pv2_curr": {
+        "comment": "直流输入电流pv2",
+        "format": "float",
+        "type": "number",
+        "unit": "A",
+        "min": 0,
+        "max": 20
+      },
+      "pv3_volt": {
+        "comment": "直流输入电压pv3",
+        "format": "float",
+        "type": "number",
+        "unit": "V",
+        "min": 0,
+        "max": 300
+      },
+      "pv3_curr": {
+        "comment": "直流输入电流pv3",
+        "format": "float",
+        "type": "number",
+        "unit": "A",
+        "min": 0,
+        "max": 20
+      },
+      "l1_volt": {
+        "comment": "交流输出L1相电压",
+        "format": "float",
+        "type": "number",
+        "unit": "V",
+        "min": 0,
+        "max": 300
+      },
+      "l1_curr": {
+        "comment": "交流输出L1相电流",
+        "format": "float",
+        "type": "number",
+        "unit": "A",
+        "min": 0,
+        "max": 220
+      },
+      "l1_freq": {
+        "comment": "交流输出L1相频率",
+        "format": "float",
+        "type": "number",
+        "unit": "Hz",
+        "min": 0,
+        "max": 400
+      },
+      "l1_dci": {
+        "comment": "交流输出L1相直流分量",
+        "format": "float",
+        "type": "number",
+        "unit": "mA",
+        "min": 0,
+        "max": 1000
+      },
+      "l1_power": {
+        "comment": "交流输出L1相功率",
+        "format": "float",
+        "type": "number",
+        "unit": "W",
+        "min": 0,
+        "max": 10000
+      },
+      "l1_pf": {
+        "comment": "交流输出L1相功率因数",
+        "format": "float",
+        "type": "number",
+        "unit": "",
+        "min": 0,
+        "max": 1
+      }
+    },
+    "commands": {
+      "set": {
+        "comment": "set prop",
+        "args": {
+          "name": {
+            "format": "name",
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "sync_time": {
+        "comment": "同步时间",
+        "args": {
+          "time": {
+            "required": true,
+            "type": "number"
+          }
+        }
+      },
+      "notify_upgrade": {
+        "comment": "通知设备有新固件，设备收到通知后，可提示用户有更新但不执行更新，也可后台自动更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "exec_upgrade": {
+        "comment": "通知设备更新固件，设备收到通知后，需立即更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "req_report": {
+        "comment": "要求设备上报最新数据。",
+        "args": {}
+      },
+      "pass_through": {
+        "comment": "透传命令",
+        "args": {
+          "raw": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "warnings": {
+      "temperature_high": {
+        "comment": "工作温度偏高",
+        "args": {
+          "value": {
+            "format": "float",
+            "type": "number"
+          }
+        }
+      }
+    },
+    "errors": {
+      "temperature_too_high": {
+        "comment": "工作温度过高",
+        "args": {
+          "value": {
+            "format": "float",
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "collector",
+    "comment": "采集器",
+    "model": "WM6232PU",
+    "manufacturer": "ZLG",
+    "memo": {
+      "comment": {
+        "comment": "设备备注",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "address": {
+        "comment": "安装地址",
+        "maxLength": 512,
+        "type": "string"
+      },
+      "devname": {
+        "comment": "设备名称",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "desc": {
+        "comment": "设备备注",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "country": {
+        "comment": "设备所在国家",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "region": {
+        "comment": "设备所在省份",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "city": {
+        "comment": "设备所在市县",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "status": {
+        "type": "number",
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "comment": "设备状态标志：online(0)，offline(1)，fault(2)，standby(3)，warning(4)，error(5)，protocol_error(6)"
+      },
+      "favorite": {
+        "type": "number",
+        "enums": [
+          0,
+          1
+        ],
+        "comment": "收藏：没有收藏(0)，收藏(1)"
+      }
+    },
+    "status": {
+      "hw_ver": {
+        "comment": "hardware version",
+        "format": "float",
+        "type": "number"
+      },
+      "sw_ver1": {
+        "comment": "software version1",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "sw_ver2": {
+        "comment": "software version2",
+        "min": 0,
+        "format": "float",
+        "type": "number"
+      },
+      "communication": {
+        "comment": "通讯方式",
+        "type": "string",
+        "enums": [
+          "wifi"
+        ]
+      },
+      "report_rate": {
+        "comment": "上传频率",
+        "format": "int",
+        "type": "number"
+      },
+      "sample_rate": {
+        "comment": "采样频率",
+        "format": "int",
+        "type": "number"
+      },
+      "heart_beat_time": {
+        "comment": "心跳时间间隔",
+        "format": "int",
+        "type": "number"
+      },
+      "max_inverters": {
+        "comment": "最大连接逆变器个数",
+        "format": "int",
+        "type": "number"
+      },
+      "signal_strength": {
+        "comment": "信号强度",
+        "format": "int",
+        "type": "number"
+      },
+      "mac_address": {
+        "comment": "mac地址",
+        "type": "string"
+      },
+      "ip_addr": {
+        "comment": "IP地址",
+        "type": "string"
+      },
+      "gw_addr": {
+        "comment": "网关地址",
+        "type": "string"
+      },
+      "dns_addr": {
+        "comment": "DNS地址",
+        "type": "string"
+      },
+      "kit_work_mode": {
+        "comment": "kit工作模式",
+        "type": "string"
+      },
+      "ap_kit_version": {
+        "comment": "AP或KIT的版本",
+        "format": "float",
+        "type": "number"
+      },
+      "clientip": {
+        "comment": "client ip",
+        "type": "string",
+        "maxLength": 32
+      },
+      "currentfm": {
+        "comment": "设备当前固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "curfminfo",
+          "type": "object",
+          "properties": {
+            "version": {
+              "comment": "当前固件版本",
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      },
+      "newfm": {
+        "comment": "待升级固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "newfminfo",
+          "type": "object",
+          "properties": {
+            "isnew": {
+              "comment": "是否存在待升级固件:不存在待升级固件(0),存在待升级固件(1)",
+              "type": "nubmer",
+              "enums": [
+                0,
+                1
+              ]
+            },
+            "model": {
+              "comment": "新固件型号",
+              "type": "string"
+            },
+            "version": {
+              "comment": "新固件版本",
+              "type": "string"
+            },
+            "url": {
+              "comment": "新固件地址",
+              "type": "string"
+            }
+          },
+          "required": [
+            "isnew"
+          ]
+        }
+      }
+    },
+    "commands": {
+      "sync_time": {
+        "comment": "同步时间",
+        "args": {
+          "time": {
+            "required": true,
+            "type": "number"
+          }
+        }
+      },
+      "notify_upgrade": {
+        "comment": "通知设备有新固件，设备收到通知后，可提示用户有更新但不执行更新，也可后台自动更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "exec_upgrade": {
+        "comment": "通知设备更新固件，设备收到通知后，需立即更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "req_report": {
+        "comment": "要求设备上报最新数据。",
+        "args": {}
+      },
+      "pass_through": {
+        "comment": "透传命令",
+        "args": {
+          "raw": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "temperature",
+    "comment": "温度传感器",
+    "models": [
+      "temp01",
+      "temp02",
+      "temp03"
+    ],
+    "manufacturer": "zlg",
+    "memo": {
+      "desc": {
+        "comment": "设备备注",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "devname": {
+        "comment": "设备名称",
+        "maxLength": 256,
+        "type": "string"
+      },
+      "country": {
+        "comment": "设备所在国家",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "region": {
+        "comment": "设备所在省份",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "city": {
+        "comment": "设备所在市县",
+        "maxLength": 64,
+        "type": "string"
+      },
+      "status": {
+        "type": "number",
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "comment": "设备状态标志：online(0)，offline(1)，fault(2)，standby(3)，warning(4)，error(5)，protocol_error(6)"
+      },
+      "favorite": {
+        "type": "number",
+        "enums": [
+          0,
+          1
+        ],
+        "comment": "收藏：没有收藏(0)，收藏(1)"
+      }
+    },
+    "status": {
+      "sw_version": {
+        "comment": "software version",
+        "format": "float",
+        "type": "number"
+      },
+      "clientip": {
+        "comment": "client ip",
+        "type": "string",
+        "maxLength": 32
+      },
+      "currentfm": {
+        "comment": "设备当前固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "curfminfo",
+          "type": "object",
+          "properties": {
+            "version": {
+              "comment": "当前固件版本",
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      },
+      "newfm": {
+        "comment": "待升级固件的信息",
+        "type": "string",
+        "format": "json",
+        "schema": {
+          "title": "newfminfo",
+          "type": "object",
+          "properties": {
+            "isnew": {
+              "comment": "是否存在待升级固件:不存在待升级固件(0),存在待升级固件(1)",
+              "type": "nubmer",
+              "enums": [
+                0,
+                1
+              ]
+            },
+            "model": {
+              "comment": "新固件型号",
+              "type": "string"
+            },
+            "version": {
+              "comment": "新固件版本",
+              "type": "string"
+            },
+            "url": {
+              "comment": "新固件地址",
+              "type": "string"
+            }
+          },
+          "required": [
+            "isnew"
+          ]
+        }
+      }
+    },
+    "data": {
+      "temp": {
+        "comment": "温度",
+        "format": "float",
+        "type": "number"
+      }
+    },
+    "commands": {
+      "set_report_interval": {
+        "comment": "设置上报温度时间间隔",
+        "args": {
+          "value": {
+            "type": "number",
+            "format": "int",
+            "comment": "单位为秒。"
+          }
+        }
+      },
+      "sync_time": {
+        "comment": "同步时间",
+        "args": {
+          "time": {
+            "required": true,
+            "type": "number"
+          }
+        }
+      },
+      "notify_upgrade": {
+        "comment": "通知设备有新固件，设备收到通知后，可提示用户有更新但不执行更新，也可后台自动更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "exec_upgrade": {
+        "comment": "通知设备更新固件，设备收到通知后，需立即更新固件",
+        "args": {
+          "model": {
+            "required": true,
+            "type": "string"
+          },
+          "version": {
+            "required": true,
+            "type": "string"
+          },
+          "url": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      },
+      "req_report": {
+        "comment": "要求设备上报最新数据。",
+        "args": {}
+      },
+      "pass_through": {
+        "comment": "透传命令",
+        "args": {
+          "raw": {
+            "required": true,
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+]
